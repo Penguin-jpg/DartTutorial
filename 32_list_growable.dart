@@ -1,46 +1,45 @@
-
 // Objectives
 // 1. Growable list
 
 void main() {
-	// Elements:    N   21  12
-	// Index:       0   1   2
+  // Elements:    N   21  12
+  // Index:       0   1   2
 
-	List<String> countries = ["USA", "INDIA", "CHINA"];     // Growable List : METHOD 1
-	countries.add("Nepal");
-	countries.add("Japan");
+  List<int> numbers = [1, 2, 3]; // Growable List : METHOD 1
+  numbers.add(4);
+  numbers.add(5);
 
+  List<int> list = List.filled(2, 0, growable: true); // Growable List: METHOD 2
+  list.add(73); // Insert Operation
+  list.add(64);
+  // list.add(21);
+  // list.add(12);
 
-	List<int> numbersList = List();                         // Growable List: METHOD 2
-	numbersList.add(73);    // Insert Operation
-	numbersList.add(64);
-	numbersList.add(21);
-	numbersList.add(12);
+  // list[0] = 99; // Update operation
+  // list[1] = null; // Delete operation
 
-	numbersList[0] = 99;    // Update operation
-	numbersList[1] = null;  // Delete operation
+  print(list[0]);
 
-	print(numbersList[0]);
+  // list.remove(73);
+  // list.add(24);
+  // list.removeAt(3);
+  list.clear();
 
-	numbersList.remove(99);
-	numbersList.add(24);
-	numbersList.removeAt(3);
-//	numbersList.clear();
+  print("\n");
 
-	print("\n");
+  for (int element in list) {
+    // Using Individual Element ( Objects )
+    print(element);
+  }
 
-	for (int element in numbersList) {                  // Using Individual Element ( Objects )
-		print(element);
-	}
+  print("\n");
 
-	print("\n");
+  list.forEach((element) => print(element)); // Using Lambda
 
-	numbersList.forEach((element) => print(element));   // Using Lambda
+  print("\n");
 
-	print("\n");
-
-	for (int i = 0; i < numbersList.length; i++) {      // Using Index
-		print(numbersList[i]);
-	}
-
+  for (int i = 0; i < list.length; i++) {
+    // Using Index
+    print(list[i]);
+  }
 }
